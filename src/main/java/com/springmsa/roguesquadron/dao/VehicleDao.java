@@ -1,7 +1,7 @@
-package dao;
+package com.springmsa.roguesquadron.dao;
 
-import model.Type;
-import model.Vehicle;
+import com.springmsa.roguesquadron.model.Type;
+import com.springmsa.roguesquadron.model.Vehicle;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -11,6 +11,5 @@ import java.util.List;
 public interface VehicleDao extends JpaRepository<Vehicle, Integer> {
     Vehicle findById(int id);
 
-    List<Vehicle> findByType(Type type);
-
+    List<Vehicle> findAllByType(Type type);
 }

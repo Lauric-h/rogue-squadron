@@ -1,15 +1,14 @@
-package controller;
+package com.springmsa.roguesquadron.controller;
 
-import dao.VehicleDao;
+import com.springmsa.roguesquadron.dao.VehicleDao;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import model.Type;
-import model.Vehicle;
+import com.springmsa.roguesquadron.model.Type;
+import com.springmsa.roguesquadron.model.Vehicle;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,16 +30,22 @@ public class MainController {
             @ApiResponse(responseCode = "404", description = "Not found",
                     content = @Content)})
     @GetMapping(value = "/api/vehicles")
-    public MappingJacksonValue getAllVehicles() {
-        Iterable<Vehicle> vehicles = vehicleDao.findAll();
-        return new MappingJacksonValue(vehicles);
+    public List<Vehicle> getAllVehicles() {
+        return vehicleDao.findAll();
     }
 
-    @GetMapping(value = "/api/vehicles")
-    public List<Vehicle> getAllVehiclesByType(@RequestParam(required = false) String paramType) {
+    @Operation(summary = "Get all vehicles of your type")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Found the vehicles of your type",
+                    content = {@Content(mediaType = "application/json")}),
+            @ApiResponse(responseCode = "404", description = "Not found",
+                    content = @Content)})
+    @GetMapping(value = "/api/vehicles/type")
+    @ResponseBody
+    public List<Vehicle> getAllVehiclesByType(@RequestParam String type) {
         for (Type vehicleType : Type.values()){
-           if (Objects.equals(vehicleType.getDisplayValue(), paramType)) {
-               return vehicleDao.findByType(vehicleType);
+           if (Objects.equals(vehicleType.getDisplayValue(), type)) {
+               return vehicleDao.findAllByType(vehicleType);
            }
         }
         return vehicleDao.findAll();

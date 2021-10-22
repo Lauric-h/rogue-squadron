@@ -1,4 +1,4 @@
-package model;
+package com.springmsa.roguesquadron.model;
 
 import org.springframework.lang.Nullable;
 
@@ -7,6 +7,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Null;
 
 @Entity
+@Table(name = "vehicles")
 public class Vehicle {
     @Id
     @GeneratedValue
@@ -39,10 +40,10 @@ public class Vehicle {
     private int horsepower;
 
     // Only for type=truck
-    private int loadingVolume;
+    private Integer loadingVolume;
 
     // Only for type=motorbike
-    private int cylinder;
+    private Integer cylinder;
 
     /* ----------------
         Constructors
@@ -153,19 +154,19 @@ public class Vehicle {
         this.horsepower = horsepower;
     }
 
-    public int getLoadingVolume() {
+    public Integer getLoadingVolume() {
         return loadingVolume;
     }
 
-    public void setLoadingVolume(int loadingVolume) {
+    public void setLoadingVolume(Integer loadingVolume) {
         this.loadingVolume = loadingVolume;
     }
 
-    public int getCylinder() {
+    public Integer getCylinder() {
         return cylinder;
     }
 
-    public void setCylinder(int cylinder) {
+    public void setCylinder(Integer cylinder) {
         this.cylinder = cylinder;
     }
 

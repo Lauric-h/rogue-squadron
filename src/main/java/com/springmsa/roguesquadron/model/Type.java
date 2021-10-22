@@ -1,4 +1,4 @@
-package model;
+package com.springmsa.roguesquadron.model;
 
 public enum Type {
     CAR("Voiture"),
