@@ -64,9 +64,4 @@ public class MainController {
     public Vehicle getVehicleById(@PathVariable int id) {
         return vehicleDao.findById(id);
     }
-
-
-
-
-
 }
