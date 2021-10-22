@@ -12,7 +12,7 @@
 	<artifactId>roguesquadron</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>roguesquadron</name>
-	<description>Project Spring MSA - Vehicules API</description>
+	<description>Project Spring MSA - Vehicles API</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

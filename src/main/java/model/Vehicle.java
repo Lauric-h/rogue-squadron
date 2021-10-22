@@ -7,7 +7,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Null;
 
 @Entity
-public class Vehicule {
+public class Vehicle {
     @Id
     @GeneratedValue
     private int id;
@@ -47,9 +47,9 @@ public class Vehicule {
     /* ----------------
         Constructors
     */
-    public Vehicule(){}
+    public Vehicle(){}
 
-    public Vehicule(
+    public Vehicle(
             int id,
             Type type,
             String brand,
@@ -171,7 +171,7 @@ public class Vehicule {
 
     @Override
     public String toString() {
-        return "Vehicule{" +
+        return "Vehicle{" +
                 "id=" + id +
                 ", type=" + type +
                 ", brand='" + brand + '\'' +
