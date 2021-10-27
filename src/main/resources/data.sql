@@ -1,3 +1,21 @@
+DROP TABLE IF EXISTS `mydb`.`vehicles` ;
+DROP TABLE IF EXISTS `mydb`.`vehicules` ;
+
+CREATE TABLE IF NOT EXISTS `mydb`.`vehicles` (
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `type` VARCHAR(255) NOT NULL,
+    `brand` varchar(255) NOT NULL,
+    `model` varchar(255) NOT NULL,
+    `color` VARCHAR(255) NOT NULL,
+    `license_plate` VARCHAR(255) NOT NULL,
+    `booking_price` INT NOT NULL,
+    `km_price` INT NOT NULL,
+    `horsepower` INT NOT NULL,
+    `loading_volume` INT NULL,
+    `cylinder` INT NULL,
+    PRIMARY KEY (`id`),
+    UNIQUE INDEX `id_UNIQUE` (`id` ASC));
+
 INSERT INTO `vehicles` (`type`,`brand`,`model`,`color`,`license_plate`,`booking_price`,`km_price`,`horsepower`,`loading_volume`)
 VALUES
   ("MOTORBIKE","lorem","vitae,","#bc403e","XYS86THP7XF",1,8,4,100),
