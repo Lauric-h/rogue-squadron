@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Objects;
 
 @RestController
+@CrossOrigin
 public class MainController {
     // GET /api/vehicles -> return all vehicles
     // GET /api/vehicles/{id} -> return 1 vehicle

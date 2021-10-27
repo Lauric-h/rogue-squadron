@@ -10,6 +10,5 @@ import java.util.List;
 @Repository
 public interface VehicleDao extends JpaRepository<Vehicle, Integer> {
     Vehicle findById(int id);
-
     List<Vehicle> findAllByType(Type type);
 }
