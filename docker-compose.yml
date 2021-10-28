@@ -15,6 +15,7 @@ services:
       SPRING_DATASOURCE_PASSWORD: Campus06
     networks:
       - rogue-net
+      - death-star-net
 
   roguesquadron_database:
     image: mysql:5.7
@@ -35,6 +36,7 @@ volumes:
   dbstorage:
 networks:
   rogue-net:
-
+  death-star-net:
+    external: true
 
 

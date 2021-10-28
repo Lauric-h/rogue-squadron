@@ -17,10 +17,6 @@ import java.util.Objects;
 @RestController
 @CrossOrigin
 public class MainController {
-    // GET /api/vehicles -> return all vehicles
-    // GET /api/vehicles/{id} -> return 1 vehicle
-    // GET /api/vehicles?type={type} -> return all vehicle of type {type}
-
     @Autowired
     VehicleDao vehicleDao;
 
